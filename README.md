@@ -1,9 +1,8 @@
-PSpice Parser
+PSpice to eSim Schematic Converter
 =============
 
-This program can convert PSPICE schematic files (.sch) to Kicad schematic files (.sch)
-
-It requires that all the PSPICE libraries (.slb files only) be present in lib/Libraries/
+This program can convert PSpice schematic files (.sch) to Kicad schematic files (.sch)
+It also generates the .pro and .proj files required for Kicad and eSim respectively.
 
 USAGE:
 -------------
@@ -11,21 +10,35 @@ USAGE:
 To compile:
 > ./compile.sh
 
-To execute:
-> ./converter path/to/pspice-schematic.sch path/to/output-project-name-without-extension
+To use the Schematic Converter:
+> ./converter path/to/pspice-schematic.sch path/to/output-folder/output-schematic-file.sch
 
 #### For example:
 
-> ./converter /home/username/Schematic1.sch /home/username/converted/schematic001
+> ./converter /home/username/Schematic1.sch /home/username/converted/schematic001/schematic1.sch
 
-This will first create a directory schematic001 at the location /home/username/converted/
-and then the files schematic001.sch and schematic001-cache.lib in /home/username/converted/schematic001/
+This requires that the /home/username/converted/schematic001/ directory exists. It creates the files schematic1.sch, schematic1.pro, schematic1.proj in /home/username/converted/schematic001/
 
-WARNING:
+PSpice to eSim Library Converter
+=============
+
+This program converts the PSpice Library files (.slb) to Kicad Library files (.lib)
+After conversion, you need to import the .lib files into Kicad in order to view the schematic files created using the PSpice to eSim Schematic Converter.
+
+To use the Library Converter:
+> ./libConverter path/to/first/library.slb path/to/second/library.slb path/to/third/library.slb
+
+#### For example:
+
+> ./libConverter /home/username/Library/analog.slb /home/username/Library/source.slb
+
+This will take the files /home/username/Library/analog.slb and /home/username/Library/sources.slb, and will create analog.lib and sources.lib at the current directory. You can convert as many library files as you want, at once.
+
+WARNING
 ------------
 Filenames should NOT contain whitespaces or tabs
 
-LICENSE:
+LICENSE
 ------------
 
 http://opensource.org/licenses/MIT
