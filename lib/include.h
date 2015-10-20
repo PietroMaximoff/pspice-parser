@@ -16,6 +16,6 @@ See LICENSE.txt
 #include<map>
 #include<cerrno>
 #include<stdio.h>
-#include<algorithm>
+
 
 using namespace std;
