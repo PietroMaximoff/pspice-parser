@@ -19,6 +19,8 @@ See LICENSE.txt
 #include "wire.h"
 #include "misc.h"
 
+#define M_PI 3.14159265358979323846
+
 extern const int MULT;			//Pspice coordinates are too small. They need to be scaled up 10 times to be usable in kicad.
 
 extern const string nameAppend;

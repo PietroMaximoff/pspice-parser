@@ -10,6 +10,12 @@ USAGE:
 To compile:
 > ./compile.sh
 
+FOR LINUX: To cross-compile for 32-bit target from a 64-bit machine (or vice versa), you may need to do
+
+>. sudo apt-get install gcc-multilib
+>. sudo apt-get install g++-multilib
+
+
 To use the Schematic Converter:
 > ./converter path/to/pspice-schematic.sch path/to/output-folder/output-schematic-file.sch
 
